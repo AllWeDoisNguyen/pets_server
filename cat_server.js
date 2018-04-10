@@ -52,7 +52,7 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-var catRoutes = require('./cat_routes.js')(app);
+var catRoutes = require('./routes/cat.js')(app);
 
 var server = app.listen(3000, function () {
     console.log('Server running at http://127.0.0.1:3000/');
