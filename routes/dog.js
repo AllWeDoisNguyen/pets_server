@@ -16,11 +16,14 @@ module.exports = function(app) {
 
     // read
     app.get('/dog', function (req, res) {
-        Dog.find(function(err, dogs) {
+        Dog.find(function(err, dog) {
             if (err) {
                 res.json({info: 'error during find dogs', error: err});
             };
-            res.json({info: 'dogs found successfully', data: dogs});
+            // res.json({info: 'dogs found successfully', data: dog});
+            setTimeout(function() {
+                res.json({info: 'dogs found successfully', data: dog});
+            }, 10000);
         });
     });
 
